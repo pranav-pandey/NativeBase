@@ -160,7 +160,7 @@ export default class Button extends NativeBaseComponent {
             return <Text style={this.getTextStyle()}>{(Platform.OS==='ios' || !this.props.capitalize) ? this.props.children : this.props.children.toUpperCase()}</Text>
         }
 
-        else if(this.props.children.type == IconNB) {
+        else if( _.get(this.props, 'children.type', null) == IconNB) {
             return React.cloneElement(this.props.children, this.getIconProps(this.props.children));
         }
 

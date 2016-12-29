@@ -28,7 +28,7 @@ export default class Container extends NativeBaseComponent {
     }
 
     else {
-      if(this.props.children && this.props.children.type == Header) {
+      if(this.props.children &&  _.get(this.props, 'children.type', null)  == Header) {
         return this.props.children;
       }
     }
