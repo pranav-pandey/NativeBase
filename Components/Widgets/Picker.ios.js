@@ -66,7 +66,8 @@ export default class PickerNB extends NativeBaseComponent {
         const item = _.find(props.children, child => {
             return child.props.value == props.selectedValue;
         });
-
+        if (_.isString(_.get(item, 'props.value')))
+          return _.get(item, 'props.value');
         return _.get(item, 'props.label');
     }
 
